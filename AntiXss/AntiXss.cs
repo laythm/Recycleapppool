@@ -80,7 +80,7 @@ public class AntiXssMiddleware
     {
         try
         {
-            string path = "/api/document/AddEitDesignatedPersonee";
+            string path = "/api/HealthCheck";
 
             if (!context.Request.Path.Equals(path, StringComparison.OrdinalIgnoreCase) || context.Request.Method != "POST")
             {

