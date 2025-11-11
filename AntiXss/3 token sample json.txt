@@ -1,0 +1,62 @@
+{
+  "nbf": 1761800841,
+  "exp": 6761887241,
+  "iss": "https://iam.cms.gov.ae",
+  "aud": [
+    "profile",
+    "offline_access",
+    "IdentityServerApi"
+  ],
+  "client_id": "5d2c8fa5-9f58-430c-bcf2-5f4366d425dc",
+  "sub": "135",
+  "auth_time": 1761800840,
+  "idp": "local",
+  "DisplayName": "System 1 Admin",
+  "Email": "admin@dge.gov.ae",
+  "LoginProviderType": 2,
+  "Id": 135,
+  "FirstName": "System 2",
+  "LastName": "Admin",
+  "Username": "Admin",
+  "MiddleName": "-",
+  "StructureId": "1",
+  "ManagerId": "57825",
+  "StructureIds": "1/6443/8170",
+  "GroupIds": "",
+  "http://schemas.microsoft.com/ws/2008/06/identity/claims/role": "CR with Role",
+  "ApplicationRoleId": "747",
+  "UserTypeId": "1",
+  "Clients": [
+    "{\"RoleId\":747,\"Role\":\"CR with Role\",\"ClientId\":\"5d2c8fa5-9f58-430c-bcf2-5f4366d425dc\"}",
+    "{\"RoleId\":747,\"Role\":\"CR with Role\",\"ClientId\":\"a4c2251b-7cf9-4012-87a8-8b5187ca48f6\"}"
+  ],
+  "jti": "50E966CD5400D668051BDAFA603A1107",
+  "sid": "0D19D2366A43DAE368DD210D2341727B",
+  "iat": 1761800841,
+  "scope": [
+    "openid",
+    "profile",
+    "IdentityServerApi",
+    "offline_access"
+  ],
+  "amr": [
+    "pwd"
+  ]
+}
+
+signing keys
+{
+  "alg": "RS256",
+  "kid": "5B519B22C43D30487A9C44579D83E21B",
+  "typ": "at+jwt"
+}
+
+
+use below to get token
+https://10015.io/tools/jwt-encoder-decoder 
+
+
+
+sample token ( always remember to generate new token using above json and make sure to update expiray date))
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3NjE4MDA4NDEsImV4cCI6Njc2MTg4NzI0MSwiaXNzIjoiaHR0cHM6Ly9pYW0uY21zLmdvdi5hZSIsImF1ZCI6WyJwcm9maWxlIiwib2ZmbGluZV9hY2Nlc3MiLCJJZGVudGl0eVNlcnZlckFwaSJdLCJjbGllbnRfaWQiOiI1ZDJjOGZhNS05ZjU4LTQzMGMtYmNmMi01ZjQzNjZkNDI1ZGMiLCJzdWIiOiIxMzUiLCJhdXRoX3RpbWUiOjE3NjE4MDA4NDAsImlkcCI6ImxvY2FsIiwiRGlzcGxheU5hbWUiOiJTeXN0ZW0gMSBBZG1pbiIsIkVtYWlsIjoiYWRtaW5AZGdlLmdvdi5hZSIsIkxvZ2luUHJvdmlkZXJUeXBlIjoyLCJJZCI6MTM1LCJGaXJzdE5hbWUiOiJTeXN0ZW0gMiIsIkxhc3ROYW1lIjoiQWRtaW4iLCJVc2VybmFtZSI6IkFkbWluIiwiTWlkZGxlTmFtZSI6Ii0iLCJTdHJ1Y3R1cmVJZCI6IjEiLCJNYW5hZ2VySWQiOiI1NzgyNSIsIlN0cnVjdHVyZUlkcyI6IjEvNjQ0My84MTcwIiwiR3JvdXBJZHMiOiIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJDUiB3aXRoIFJvbGUiLCJBcHBsaWNhdGlvblJvbGVJZCI6Ijc0NyIsIlVzZXJUeXBlSWQiOiIxIiwiQ2xpZW50cyI6WyJ7XCJSb2xlSWRcIjo3NDcsXCJSb2xlXCI6XCJDUiB3aXRoIFJvbGVcIixcIkNsaWVudElkXCI6XCI1ZDJjOGZhNS05ZjU4LTQzMGMtYmNmMi01ZjQzNjZkNDI1ZGNcIn0iLCJ7XCJSb2xlSWRcIjo3NDcsXCJSb2xlXCI6XCJDUiB3aXRoIFJvbGVcIixcIkNsaWVudElkXCI6XCJhNGMyMjUxYi03Y2Y5LTQwMTItODdhOC04YjUxODdjYTQ4ZjZcIn0iXSwianRpIjoiNTBFOTY2Q0Q1NDAwRDY2ODA1MUJEQUZBNjAzQTExMDciLCJzaWQiOiIwRDE5RDIzNjZBNDNEQUUzNjhERDIxMEQyMzQxNzI3QiIsImlhdCI6MTc2MTgwMDg0MSwic2NvcGUiOlsib3BlbmlkIiwicHJvZmlsZSIsIklkZW50aXR5U2VydmVyQXBpIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdfQ.2QPbbGF8B1H5PoNvzT1tOw1xErM2NNRzcPUTvFggTXo

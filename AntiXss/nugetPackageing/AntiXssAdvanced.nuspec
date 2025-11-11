@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>AntiXssProtector</id>
+		<version>1.0.1</version>
+		<authors>Tech AI Crazy</authors>
+		<owners>Tech AI Crazy</owners>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<license type="file">LICENSE.md</license>
+		<description>
+			Advanced Anti-XSS Helper.
+
+			Usage example:
+
+			app.UseAntiXss(o =&gt;
+			o.excludedApis = new HashSet&lt;string&gt;(StringComparer.OrdinalIgnoreCase)
+			{
+			"/GetData",
+			"/Controller/AddData"
+			}
+			);
+		</description>
+		<readme>README.md</readme>
+		<dependencies>
+			<group targetFramework="net8.0">
+				<!-- no dependencies -->
+			</group>
+		</dependencies>
+	</metadata>
+
+	<files>
+		<file src="lib\net8.0\AntiXss.dll" target="lib\net8.0" />
+		<file src="README.md" target="." />
+		<file src="LICENSE.md" target="." />
+	</files>
+</package>

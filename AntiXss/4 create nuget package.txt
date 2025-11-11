@@ -1,0 +1,3 @@
+after 2 Run Obfuscator >  copy dll to nugetPackageing\lib\net8.0 then run below command on cmd
+
+nuget.exe pack AntiXssAdvanced.nuspec

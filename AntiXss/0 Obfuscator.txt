@@ -1,0 +1,20 @@
+Practical choices (pick one)
+Option 1 — Obfuscate IL first, then produce NativeAOT from obfuscated assemblies (recommended if feasible)
+
+Workflow:
+
+Build the project to produce the managed assemblies (IL) — i.e. dotnet build -c Release (do not publish NativeAOT yet).
+
+Use an obfuscator (ConfuserEx fork, Eazfuscator, Dotfuscator) on the produced managed DLLs. Ensure you resolve runtime dependencies (add the shared framework DLLs as external="true" in .crproj or copy them next to input DLLs) and exclude any types/members used via reflection.
+
+Replace the original managed assemblies with the obfuscated ones (or create a small project that references the obfuscated assemblies).
+
+Run dotnet publish -r <RID> -c Release /p:PublishAot=true to produce the NativeAOT native binary from the obfuscated assemblies.
+
+Important caveats:
+
+Obfuscation that renames things can break reflection and NativeAOT trimming. Add explicit exclusions for types/methods used reflectively (e.g., via Confuser rules or PreserveDependency attributes) and test thoroughly.
+
+Not all obfuscators are compatible with this workflow; commercial ones often handle complex scenarios more reliably.
+
+Test on the exact runtime/RID you’ll ship to — AOT + obfuscation may surface runtime issues.

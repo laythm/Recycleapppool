@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project baseDir="." outputDir="./Confused">
+	<probePath>.</probePath>
+	<probePath>.\</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.0</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.1</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.2</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.3</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.4</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.5</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.6</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.7</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.8</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.10</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.0</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.10</probePath>
+	<probePath>C:\Program Files\dotnet\packs\Microsoft.AspNetCore.App.Ref\8.0.0\ref\net8.0</probePath>
+
+	<module path="bin\Release\net8.0\AntiXss.dll">
+		<rule pattern="true" preset="none">
+			<protection id="rename">
+				<argument name="mode" value="unicode" />
+				<argument name="renPublic" value="false" />
+				<argument name="flatten" value="true" />
+				<argument name="renameArgs" value="true" />
+			</protection>
+
+			<!-- Constant encryption -->
+			<protection id="constants">
+				<argument name="encodeStrings" value="true" />
+				<argument name="encodeNumbers" value="true" />
+				<argument name="encodePrimitives" value="true" />
+			</protection>
+
+			<!-- Control flow obfuscation - use 'expression' for stronger protection -->
+			<protection id="ctrl flow">
+				<argument name="predicate" value="expression" />
+				<argument name="intensity" value="60" />
+			</protection>
+
+			<!-- Reference proxy -->
+			<protection id="ref proxy">
+				<argument name="mode" value="strong" />
+				<argument name="encoding" value="expression" />
+				<argument name="depth" value="5" />
+			</protection>
+
+			<!-- Resource encryption -->
+			<protection id="resources">
+				<argument name="mode" value="dynamic" />
+			</protection>
+
+			<!-- Anti-tamper with JIT protection -->
+			<protection id="anti tamper">
+				<argument name="mode" value="normal" />
+				<argument name="key" value="dynamic" />
+			</protection>
+
+			<!-- Anti-debug protection -->
+			<!--<protection id="anti debug" />-->
+
+			<!-- Anti-dump protection -->
+			<protection id="anti dump" />
+
+			<!-- Type scrambling -->
+			<protection id="typescramble">
+				<argument name="renameArgs" value="true" />
+			</protection>
+
+			<!-- Module watermarking -->
+			<protection id="watermark">
+				<argument name="watermarkString" value="Protected" />
+			</protection>
+
+		</rule>
+		 
+	</module>
+</project>
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>
+<project baseDir="." outputDir="./Confused">
+	<probePath>.</probePath>
+	<probePath>.\</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.0</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.1</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.2</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.3</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.4</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.5</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.6</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.7</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.8</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.10</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.0</probePath>
+	<probePath>C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.10</probePath>
+	<probePath>C:\Program Files\dotnet\packs\Microsoft.AspNetCore.App.Ref\8.0.0\ref\net8.0</probePath>
+
+	<module path="bin\Release\net8.0\AntiXss.dll">
+		<rule pattern="true" preset="none">
+			<protection id="rename">
+				<argument name="mode" value="unicode" />
+				--><!-- If you call this assembly from outside, set keepPublicApi="true" or add exclusions --><!--
+				<argument name="preservePublicApi" value="false" />
+				--><!-- optional: flatten namespaces to reduce recognizable structure (tool-dependent) --><!--
+				<argument name="flattenNamespaces" value="true" />
+			</protection>
+			
+			<protection id="constants">
+				<argument name="encodeStrings" value="true" />
+				<argument name="encodeNumbers" value="true" />
+			</protection>
+
+			--><!-- Hide control flow (may cause ExecutionEngineException - test this!) --><!--
+			<protection id="ctrl flow">
+				<argument name="predicate" value="normal" />
+			</protection>
+
+			--><!-- Add reference proxy (may cause issues with async) --><!--
+			<protection id="ref proxy">
+				<argument name="mode" value="mild" />
+			</protection>
+
+			<protection id="anti tamper">
+				<argument name="mode" value="normal" />
+			</protection>
+
+			<protection id="anti debug">
+			</protection>
+			
+			--><!-- Resource encryption --><!--
+			<protection id="resources">
+				<argument name="mode" value="normal" />
+			</protection>
+		</rule>
+	</module>
+</project>-->
+ 

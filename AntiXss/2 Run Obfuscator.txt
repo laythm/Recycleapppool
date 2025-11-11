@@ -1,0 +1,4 @@
+open cmd
+cd "D:\recycle app pool\AntiXss"
+
+.\BuiltObfuscator\Confuser.CLI.exe .\AntiXss.confuser.crproj
