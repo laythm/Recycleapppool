@@ -39,11 +39,6 @@ public class AntiXssMiddleware
     {
         var result = await Validate(httpContext);
 
-        if (result == 0)
-        {
-            return;
-        }
-
         httpContext.Request.EnableBuffering();
         if (!excludedApis.Contains(httpContext.Request.Path))
         {

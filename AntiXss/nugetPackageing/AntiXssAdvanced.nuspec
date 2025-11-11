@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>AntiXssProtector</id>
-		<version>1.0.2</version>
+		<version>1.0.3</version>
 		<authors>Tech AI Crazy</authors>
 		<owners>Tech AI Crazy</owners>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
