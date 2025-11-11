@@ -1,4 +1,6 @@
-﻿namespace Decrypt
+﻿using System.Text.Json;
+
+namespace Decrypt
 {
     internal class Program
     {
@@ -26,12 +28,17 @@
             // ✅ Print response
             Console.WriteLine("Response Status: " + response.StatusCode);
             Console.WriteLine("Response Body:");
-            Console.WriteLine(AdvancedEncryption.DecryptBytes(responseBytes, "asd"));
 
+              
+            string jsonText = System.Text.Encoding.UTF8.GetString(AdvancedEncryption.DecryptBytes(responseBytes, "asd"));
+ 
 
-            string jsonText = System.Text.Encoding.UTF8.GetString(responseBytes);
-
-            Console.WriteLine(jsonText);
+            var jsonElement = System.Text.Json.JsonSerializer.Deserialize<JsonElement>(jsonText);
+            string pretty = System.Text.Json.JsonSerializer.Serialize(jsonElement, new JsonSerializerOptions
+            {
+                WriteIndented = true
+            });
+            Console.WriteLine(pretty);
 
             Console.WriteLine("Hello, World!");
             return 1;
